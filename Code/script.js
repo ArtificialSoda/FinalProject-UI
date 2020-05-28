@@ -25,7 +25,7 @@ loginForm.addEventListener('submit', (e) =>
         alert("An email, ***@***.*** must have at least 1 character for each \"***\".");
 
     MIN_PASSWORD_LENGTH = 8; MIN_NUMBERS_PASSWORD = 1;
-    if (password.Length < MIN_PASSWORD_LENGTH && passwordSplit < MIN_NUMBERS_PASSWORD)
+    if (password.Length < MIN_PASSWORD_LENGTH && numbersInPassword < MIN_NUMBERS_PASSWORD)
         alert("A password needs to be at least 8 characters long, and needs to contain 1+ letters.");
 
 });
