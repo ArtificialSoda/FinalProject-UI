@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Font Awesome Kit URL -->
+     <script src="https://kit.fontawesome.com/20d18bedad.js" crossorigin="anonymous" defer></script>
+    <title>Login Page</title>
+</head>
+<body>
+    <!-- The logic is there, but I don't know why Alert() does nothing. Tell me if you know -->
+    <!-- Will update viuals soon-->
+    <style>
+        .form-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn {
+                font-size: 1.25rem;
+                background: var(--btn-background);
+                margin-top: 1em;
+                padding: 0.35em 0.75em;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        .btn:hover {
+                background: gray;
+            }
+    </style>
+
+    <div class="form-container">
+        <form name="login-form"> 
+            Email Address: <input type="email" name="userEmail" required><br/>  
+            Password: <input type="password" name="userPassword" required><br/>  
+            <button type="submit" id="submit-btn" class="btn" value="Submit"><i class="fas fa-mouse-pointer"></i>Submit</button>
+        </form>  
+    </div>
+</body>
+</html>
