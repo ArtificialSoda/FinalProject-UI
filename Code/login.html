@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Font Awesome Kit URL -->
-     <script src="https://kit.fontawesome.com/20d18bedad.js" crossorigin="anonymous" defer></script>
     <title>Login Page</title>
 </head>
 <body>
-    <!-- The logic is there, but I don't know why Alert() does nothing. Tell me if you know -->
-    <!-- Will update viuals soon-->
+    <!-- STYLING NEEDS TO BE ADDED -->
     <style>
         .form-container{
             display: flex;
+            flex-flow: column nowrap;
             justify-content: center;
             align-items: center;
+        }
+        #userEmail, #userPassword{
+            border: 2px solid black;
+        }
+        .submit-btn{
+            margin: 0 auto;
         }
         .btn {
                 font-size: 1.25rem;
@@ -31,11 +35,21 @@
     </style>
 
     <div class="form-container">
-        <form name="login-form"> 
-            Email Address: <input type="email" name="userEmail" required><br/>  
-            Password: <input type="password" name="userPassword" required><br/>  
-            <button type="submit" id="submit-btn" class="btn" value="Submit"><i class="fas fa-mouse-pointer"></i>Submit</button>
+        <form name="login-form">
+            <label for="userEmail">
+                Email Address:
+            </label>
+            <input type="email" name="userEmail" required>
+            <label for ="userPassword">
+                Password:  
+            </label>
+            <input type="password" name="userPassword" required>
+            <button type="submit" id="submit-btn" class="btn" value="Submit"><i class="fas fa-mouse-pointer"></i> Submit</button>
         </form>  
     </div>
+
+    <!--Scripts-->
+    <script src="login.js"></script>
+	<script src="https://kit.fontawesome.com/20d18bedad.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+canvas {
+    border-bottom: 3px solid papayawhip;
+    border-top: 3px solid papayawhip;
+}
