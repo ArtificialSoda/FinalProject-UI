@@ -1,20 +1,113 @@
+:root {
+    --top-text-color: #ffffff;
+    --top-text-hover-color: #cccccc;
+    --header-color-2: #000000;
+    --header-color-1: rgb(5, 40, 90);
+    --navbar-color: rgb(50, 105, 190);
+    --bg-color: rgb(220, 220, 230);
+    --footer-color: rgb(120, 120, 130);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-decoration: none;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Forces the footer to go at the bottom */
     align-items: center;
-    background-color: #121212;
+    background-color: var(--bg-color);
 }
 
 header {
-    color: white;
-    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    background-image: linear-gradient(var(--header-color-1), var(--header-color-2));
+    color: var(--top-text-color);
 }
 
+nav {
+    padding: 10px 0;
+    width: 100%;
+    background-color: var(--navbar-color);
+}
+
+nav a {
+    padding: 5px 20px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--top-text-color);
+}
+
+nav a:hover {
+    color: var(--top-text-hover-color);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+#main-width-limit {
+    max-width: 800px;
+}
+
+footer {
+    padding: 10px 0;
+    width: 100%;
+    background-color: var(--footer-color);
+    font-size: 1.2rem;
+    color: var(--top-text-color);
+}
+
+footer div {
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+
+/* For login.html */
+.form-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#userEmail, #userPassword{
+    border: 2px solid black;
+}
+
+.submit-btn{
+    margin: 0 auto;
+}
+
+.btn {
+    font-size: 1.25rem;
+    background: var(--btn-background);
+    margin-top: 1em;
+    padding: 0.35em 0.75em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: gray;
+}
+
+/* For bubble-simulation.html */
 canvas {
     border-bottom: 3px solid papayawhip;
     border-top: 3px solid papayawhip;
