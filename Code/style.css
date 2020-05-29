@@ -32,12 +32,14 @@ header {
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     padding: 12px 0;
     width: 100%;
     background-color: var(--navbar-color);
-    text-align: center;
 }
 
 nav a {
@@ -61,7 +63,7 @@ main {
 }
 
 footer {
-    padding: 10px 0;
+    padding: 2px 0;
     width: 100%;
     background-color: var(--footer-color);
     font-size: 1.2rem;
@@ -163,7 +165,8 @@ canvas {
 }
 
 #logout-form .btn {
-    padding: 0.35em 8.75em;
+    margin: 0.5em auto;
+    padding: 0.35em 8.5em;
 }
 
 #simulation-setup {
@@ -210,6 +213,10 @@ canvas {
 #simulation {
     display: none;
     flex-direction: column;
+}
+
+#number { 
+    color: rgb(247, 79, 79);
 }
 
 #canvas-container {
