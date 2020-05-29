@@ -1,13 +1,14 @@
 /* === Login Page === */
-/* STYLING NEEDS TO BE ADDED */
-
 const loginForm = document.forms['login-form'];
-    
+
+var loginStatus = 
+{
+    isEmailValid : false,
+    isPasswordValid : false
+}
+
 loginForm.addEventListener('submit', (e) =>
 {
-    
-    e.preventDefault();
-
     // Stores login details
     var email = loginForm['userEmail'].value;
     var password = loginForm['userPassword'].value;
@@ -18,7 +19,12 @@ loginForm.addEventListener('submit', (e) =>
 
     if (emailDomain == null)
     {
+        e.preventDefault();
         alert("An email (***@***.***) must have at least 1 character for each (***).");
+    }
+    else 
+    {
+        loginStatus.isEmailValid = true;
     }
     
     // Validates the password
@@ -33,10 +39,15 @@ loginForm.addEventListener('submit', (e) =>
             break;
         }
     }
-    const MIN_PASSWORD_LENGTH = 8; 
-    if (passwordSplit.length < MIN_PASSWORD_LENGTH || !numbersInPassword)
+
+    if (!numbersInPassword)
     {
-        alert("A password needs to be at least 8 characters long, and needs to contain at least 1 number.");
         e.preventDefault();
+        alert("A password needs to contain at least 1 number.");
     }
+    else if (numbersInPassword && passwordSplit.Length >= 8)
+    {
+        loginStatus.isPasswordValid = true;
+    }
+
 });

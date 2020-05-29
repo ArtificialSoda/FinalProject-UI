@@ -16,11 +16,13 @@
 	</header>
 	<nav>
 		<a href="./index.html">Home</a>
-		<a href="./login.html">Login</a>
 		<a href="./bubble-simulation.html">Simulation</a>
 	</nav>
 	<main>
         <h2 id="page-title">Bubble Simulation</h2>
+        <form id="logout-form" action="./index.html">
+            <button type="submit" class="btn" value="Submit"><i class="fas fa-mouse-pointer"></i> Logout</button>
+        </form>
         <div class="main-section">
             <div id="simulation-setup">
                 <h4>Modify any of the following parameters if you wish, then click "Launch" to start the simulation.</h4>
@@ -75,7 +77,8 @@
 	<!--Scripts-->
 	<script src="utilities.js"></script>
 	<script src="bubble-collision.js"></script>
-	<script src="main.js"></script>
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/20d18bedad.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
