@@ -22,15 +22,49 @@
 	<main>
         <h2 id="page-title">Bubble Simulation</h2>
         <div class="main-section">
-            <div id="simulation-top-bar">
-                <div id="simulation-info">
-                    <h4>Time elapsed: <span id="time">0</span></h3>
-                    <h4>Sick bubbles: <span id="number">0</span></h3>
-                </div>
-                <button id="simulation-parameters-button">Open Parameters</button>
+            <div id="simulation-setup">
+                <h4>Modify any of the following parameters if you wish, then click "Launch" to start the simulation.</h4>
+                <form id="simulation-form">
+                    <div id="simulation-form-grid">
+                        <label for="canvasSize">Size of the container</label>
+                        <select id="canvasSize">
+                            <option value="large">Large</option>
+                            <option value="medium">Medium</option>
+                            <option value="small">Small</option>
+                        </select>
+    
+                        <label for="radius">Radius of the bubbles (in px)</label>
+                        <input id="radius" type="number" value="10" min="2" max="50">
+                        <label for="numBubbles">Number of bubbles</label>
+                        <input id="numBubbles" type="number" value="70" min="1" max="500">
+    
+                        <label for="numStatic">Number of static (fixed) bubbles</label>
+                        <input id="numStatic" type="number" value="40" min="0" max="500">
+    
+                        <label for="sickRatio">Initial ratio of sick to healthy bubbles</label>
+                        <div>
+                            <input id="sickRatio" type="range" step="0.01" value="0.2" min="0" max="1">
+                            <label id="sickRatioLabel">0.2</label>
+                        </div>
+    
+                        <label for="speed">Speed of the bubbles</label>
+                        <div>
+                            <input id="speed" type="range" step="0.1" value="1" min="0" max="5">
+                            <label id="speedLabel">1</label>
+                        </div>
+                    </div>
+                    <button type="submit" id="simulation-launch">Launch</button>
+                </form>  
             </div>
-            <div id="simulation-parameters"></div>
-            <canvas tabindex='1'></canvas>
+            <div id="simulation">
+                <div id="simulation-info">
+                    <h4>Time elapsed: <span id="time">0</span></h4>
+                    <h4>Sick bubbles: <span id="number">0</span></h4>
+                </div>
+                <div id="canvas-container">
+                    <canvas tabindex='1'></canvas>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
