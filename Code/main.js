@@ -103,9 +103,9 @@ function animate() {
 		// To update itself, a bubble needs to know the state of all bubbles
 		bubble.update(bubbles);
 	}
-	sickCounterEl.innerHTML = sickCounter;
+	sickCounterEl.innerHTML = sickCounter + "/" + bubbles.length;
 	timeCounterEl.innerText = timeCounter + "s";
-	immuneCounterEl.innerHTML = immuneCounter;
+	immuneCounterEl.innerHTML = immuneCounter  + "/" + bubbles.length;
 
 	if (sickCounter > maxSickness)
 	{
@@ -114,7 +114,7 @@ function animate() {
 
 	if (sickCounter >= numBubbles.value || immuneCounter > 0)
 	{
-		timeHeadingEl.innerText = "Time for max infection: " + timeCounterEl.innerText + " (" + maxSickness + " sick bubbles)";
+		timeHeadingEl.innerText = "Time for max infection: " + timeCounterEl.innerText + " (" + maxSickness + "/" + bubbles.length + " sick bubbles)";
 		timeHeadingEl.style.fontWeight = "bolder";
 	}
 }
