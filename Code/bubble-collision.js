@@ -28,7 +28,7 @@ class Bubble {
 
 		for (let bubble of bubbles) {
 
-			if (!bubble.immune)
+			if (!bubble.immune && !this.immune)
 			{
 				if (this.isColliding(bubble) && bubble !== this) {
 					this.infect(bubble);
@@ -71,16 +71,19 @@ class Bubble {
 	}
 
 	infect(bubble) {
-		if (!this.sick && bubble.sick) {
-			this.sick = bubble.sick;
-			sickCounter++;
-			this.changeColour();
-
-		} 
-		else if (this.sick && !bubble.sick) {
-			bubble.sick = this.sick;
-			sickCounter++;
-			bubble.changeColour();
+		if (!bubble.immune && !this.immune)
+		{
+			if (!this.sick && bubble.sick) {
+				this.sick = bubble.sick;
+				sickCounter++;
+				this.changeColour();
+	
+			} 
+			else if (this.sick && !bubble.sick) {
+				bubble.sick = this.sick;
+				sickCounter++;
+				bubble.changeColour();
+			}
 		}
 	}
 	

@@ -219,6 +219,10 @@ canvas {
     color: rgb(247, 79, 79);
 }
 
+#immune {
+    color: rgb(85, 0, 85);
+}
+
 #canvas-container {
     display: flex;
     justify-content: center;
@@ -226,6 +230,8 @@ canvas {
 
 #simulation-info {
     display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     justify-content: center;
 }
 
