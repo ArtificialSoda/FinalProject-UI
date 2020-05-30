@@ -6,6 +6,8 @@ class Bubble {
 			y: (Math.random() - 0.5) * 2 * speed
 		}
 		this.sick = isSick;
+		this.timeSick = 0
+		this.immune = false;
 		this.changeColour();
 		this.positionRandomly();
 	}
@@ -26,9 +28,12 @@ class Bubble {
 
 		for (let bubble of bubbles) {
 
-			if (this.isColliding(bubble) && bubble !== this) {
-				this.infect(bubble);
-				resolveCollision(this, bubble);
+			if (!bubble.immune)
+			{
+				if (this.isColliding(bubble) && bubble !== this) {
+					this.infect(bubble);
+					resolveCollision(this, bubble);
+				}
 			}
 		}
 		this.x += this.velocity.x;
@@ -71,10 +76,13 @@ class Bubble {
 			sickCounter++;
 			this.changeColour();
 
-		} else if (this.sick && !bubble.sick) {
+		} 
+		else if (this.sick && !bubble.sick) {
 			bubble.sick = this.sick;
 			sickCounter++;
 			bubble.changeColour();
 		}
 	}
+	
+
 }

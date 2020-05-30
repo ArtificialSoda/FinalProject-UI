@@ -86,7 +86,9 @@ document.getElementById("simulation-form").onsubmit = function(e) {
 		}
 		bubbles.push(newBubble);	// add newBubble to the bubbles array
 	}
-	var timer = setInterval(simulationTimer, 1000);
+	setInterval(simulationTimer, 1000);
+	setInterval(trackTimeSick, 1000)
+	setInterval(removeSickness, 1000);
 	animate();
 }
 
@@ -103,15 +105,42 @@ function animate() {
 
 	timeCounterEl.innerText = timeCounter + "s";
 	if (sickCounter >= numBubbles.value)
-	{
+	{;
 		timeHeadingEl.innerText = "Time for max infection: " + timeCounterEl.innerText;
 		timeHeadingEl.style.fontWeight = "bolder";
 	}
 }
+// Times the simulation up until infection rate is 100%
 function simulationTimer()
 {
 	if (sickCounter < numBubbles.value)
 	{
 		timeCounter++;
+	}
+}
+
+// Tracks the time (seconds) each sick bubble is infected
+function trackTimeSick()
+{
+	for (let bubble of bubbles)
+	{
+		if (bubble.sick) 
+		{
+			bubble.timeSick++;
+		}
+	}
+}
+// Sick bubbles become healthy again after 20s
+function removeSickness()
+{
+	for (let bubble of bubbles)
+	{
+		if (bubble.sick && bubble.timeSick > 20) {
+			bubble.sick = false;
+			bubble.timeSick = 0;
+			bubble.changeColour();
+			bubble.immune = true;
+			sickCounter--;
+		}
 	}
 }
